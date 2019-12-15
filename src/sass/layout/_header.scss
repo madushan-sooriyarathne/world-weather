@@ -1,0 +1,41 @@
+.header {
+    background-color: var(--color-secondary);
+    grid-column: full-start / full-end;
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        color: var(--color-white);
+        font-family: "Permanent Marker", cursive;
+        font-size: 3rem;
+        margin-left: 3rem;
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+    font-size: 0;
+
+    &__item {
+        list-style: none;
+        padding: 1rem 2rem;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: lighten($color-secondary, 1.5);
+        }
+    }
+
+    &__link:visited,
+    &__link:link {
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: 1.5rem;
+        display: inline;
+    }
+}

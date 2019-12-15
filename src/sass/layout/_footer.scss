@@ -1,0 +1,45 @@
+.footer {
+    background-color: var(--color-secondary);
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+
+    align-self: end;
+
+    padding: 1rem 5rem;
+
+    @include response(medium) {
+        grid-template-columns: max-content;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        color: var(--color-white);
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-set {
+        margin-left: 2rem;
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+                fill: var(--color-white);
+                margin: 0 0.5rem;
+            }
+        }
+    }
+}

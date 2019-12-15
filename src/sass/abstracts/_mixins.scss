@@ -1,0 +1,29 @@
+//Media Query Manager
+
+/*
+$breakpoint argument choices:
+- higher
+- medium 
+- small
+
+*/
+
+@mixin response($breakpoint) {
+    @if $breakpoint == higher {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == medium {
+        @media (max-width: 43.75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == small {
+        @media (max-width: 31.25em) {
+            @content;
+        }
+    }
+}

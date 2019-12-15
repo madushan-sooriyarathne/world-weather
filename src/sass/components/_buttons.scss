@@ -1,0 +1,134 @@
+.btn {
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    color: white;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    &__add {
+        justify-self: center;
+    }
+
+    &__remove {
+        background-color: var(--color-error);
+
+        &:hover {
+            border: 1px solid var(--color-error);
+            background: transparent;
+            color: var(--color-error);
+        }
+    }
+
+    &__small {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    &__reload {
+        background-color: var(--color-orange);
+
+        &:hover {
+            background-color: transparent;
+            color: var(--color-orange);
+            border: 1px solid var(--color-orange);
+        }
+    }
+
+    &__add {
+        background-color: var(--color-green);
+        text-decoration: none;
+
+        &:hover {
+            background-color: transparent;
+            color: var(--color-green);
+            border: 1px solid var(--color-green);
+        }
+    }
+
+    &__search {
+        background-color: var(--color-green);
+        text-decoration: none;
+
+        &:hover {
+            background-color: transparent;
+            color: var(--color-green);
+            border: 1px solid var(--color-green);
+        }
+    }
+
+    &__page {
+        outline: none;
+        padding: 0.5rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--color-text-blue);
+        border: 1px solid transparent;
+        border-radius: 50px;
+        transition: all 0.3s;
+        cursor: pointer;
+        width: 25%;
+
+        .content {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+
+        &--prev {
+            margin-right: auto;
+        }
+
+        &--next {
+            margin-left: auto;
+            .content {
+                span {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                img {
+                    grid-column: 2 / 3;
+                    grid-row: 1 / 2;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: var(--color-text-blue);
+            color: white;
+            border: 1px solid var(--color-text-blue);
+        }
+    }
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    transition: all 0.2s;
+
+    &:hover {
+        fill: var(--color-text-maroon);
+        transform: rotate(90deg);
+    }
+
+    &-btn {
+        height: 2rem;
+        width: 2rem;
+    }
+}

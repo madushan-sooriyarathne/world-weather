@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>World Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="header__logo">
+					World Weatehr
+			</div>
+			<nav class="navigation">
+				
+			</nav>
+		</header>
+		<div class="cities">
+			<div class="cities__main-placeholder">
+				<!-- Main City weather data will injected here. EXAMPLE 👇-->
+				<!--<div class="cities__main">
+						<h2 class="location">Colombo, Sri Lanka</h2>
+	
+						<object type="image/svg+xml" data="img/svg/sunny.svg" class="icon-main">
+							Sunny
+						</object>
+						<div class="status">
+							<h3 class="temp">30 °C</h3>
+							<p class="state">Sunny</p>
+						</div>
+						<div class="details">
+							<div class="details__item">
+								<object type="image/svg+xml" data="img/svg/thermometer-cold.svg">
+									Min Temp
+								</object>
+								<p>27 °C</p>
+							</div>
+							<div class="details__item">
+								<object type="image/svg+xml" data="img/svg/thermometer-hot.svg">
+									Max Temp
+								</object>
+								<p>33 °C</p>
+							</div>
+							<div class="details__item">
+								<object type="image/svg+xml" data="img/svg/pressure.svg">
+									Pressure
+								</object>
+								<p>73%</p>
+							</div>
+							<div class="details__item">
+								<object type="image/svg+xml" data="img/svg/drop.svg">
+									Humidity
+								</object>
+								<p>1013 Pha</p>
+							</div>
+						</div>
+						<div class="datetime">
+							<div class="datetime__time">02 : 14 PM</div>
+							<div class="datetime__date">06<sup>th</sup> November 2019</div>
+						</div> 
+				</div>-->
+			</div>
+				
+			<div class="cities__added">
+				<h2 class="heading-2">Your Cities</h2>
+				<div class="cities__added-placeholder">
+
+				<!-- All Added Cities Will injected here. EXAMPLE 👇-->
+				<!--<div class="cities__added--sub">
+						<object type="image/svg+xml" data="img/svg/cloudy.svg" class="icon-main">
+							Sunny
+						</object>
+						<div class="details">
+							<div class="details__location">
+								<h3 class="details__location--city">Saint Petersburg</h3>
+								<p class="details__location--country">Russia</p>
+							</div>
+							<div class="details__datetime">
+								<div class="details__datetime--time">10 : 00 PM</div>
+								<div class="details__datetime--date">06<sup>th</sup> November 2019</div>
+							</div>
+						</div>
+						<div class="status">
+							<h3 class="temp">-4 °C</h3>
+							<p class="state">Mostly Cloudy</p>
+						</div>
+					</div>
+				-->
+				</div>
+				<div class="cities__action">
+					<a class="btn btn__remove" id="clear-cities">Clear All Cities</a> 
+					<a href="#popup" class="btn btn__add" id="add-cities">&#43; Add a City</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="forecast" id="forecast">
+			<div class="forecast__container">
+				
+				<a href="#" class="close" id="forecast-close-btn">
+					<img src="img/svg/close.svg" type="image/svg+xml" class="close-btn"></img>
+				</a>
+				<div class="forecast-current">
+
+				</div>
+				<h2 class="heading-2">5 Days Forecast</h2>
+				<div class="forecast-placeholder">
+					<!-- All the forecast Items will injected here including the selected city current weather and delete button-->
+					<!--EXAMPLE 👇-->
+
+				</div>
+				<div class="forecast-pagination">
+
+				</div>
+			</div>
+
+		</div>
+		<div class="popup" id="popup">
+			
+			<div class="popup__container">
+				<h2 class="heading-2">Add cities</h2>
+				<p class="description">Type City Name and hit enter</p>
+				<a href="#" class="close">
+					<img src="img/svg/close.svg" type="image/svg+xml" class="close-btn"></img>
+				</a>
+				<form action="#" class="search-form">
+					<input type="text" name="serachFIeld" id="search" class="search-input" placeholder="Search Cities" autocomplete="off" required>
+				</form>
+			</div>
+
+			<div class="search-result">
+				<!-- All the search result items will injected here. EXAMPLE 👇-->
+
+			</div>
+			<div class="search-pagination">
+				<!-- <button class="btn__page btn__page--prev">
+					<div class="content">
+						<img src="img/svg/left-arrow.svg" type="image/svg+xml" class="pagination-prev"></img>
+						<span>Previous</span>
+					</div>
+				</button>
+				<button class="btn__page btn__page--next">
+					<div class="content">
+						<img src="img/svg/right-arrow.svg" type="image/svg+xml" class="pagination-next"></img>
+						<span>Next</span>
+					</div>
+				</button> -->
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__madewith">
+				<p class="footer__text">Made with <span class="color-red">❤️</span> using Vanilla Javascript & Sass</p>
+			</div>
+			<div class="footer__contact">
+				<p class="footer__text">Find the Guy who made this on</p>
+				<div class="footer__icon-set">
+					<a href="https://www.facebook.com/madushan.sooriyarathne" target="_blank" rel="noopener noreferrer">
+						<!-- <object type="image/svg+xml" data="img/svg/facebook.svg" class="icon-footer">
+							Sunny
+						</object> -->
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-facebook"></use>
+						</svg>
+					</a>
+					<a href="https://www.instagram.com/iam_madushan/" target="_blank" rel="noopener noreferrer">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-instagram"></use>
+						</svg>
+					</a>
+					<a href="https://github.com/madushan-sooriyarathne" target="_blank" rel="noopener noreferrer">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-github"></use>
+						</svg>
+					</a>
+					<a href="https://t.me/@iammadushan" target="_blank" rel="noopener noreferrer">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-telegram"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+		
+</body>
+
+	</div>
+</html>

@@ -1,0 +1,39 @@
+:root {
+    --color-text-dark: #2b2a2a;
+    --color-text-maroon: #9d5353;
+    --color-text-blue: #0b91ae;
+    --color-secondary: #544c4c;
+    --color-bg-light: #e5e5e5;
+    --color-error: #990033;
+    --color-green: #77cf80;
+    --color-orange: #ffce71;
+    --color-white: #ffffff;
+}
+
+//General Global Reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @include response(medium) {
+        font-size: 50%;
+    }
+
+    @include response(small) {
+        font-size: 37.5%;
+    }
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--color-bg-light);
+    height: 100vh;
+}

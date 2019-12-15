@@ -1,0 +1,31 @@
+.cities {
+    grid-column: cities-start / cities-end;
+
+    display: grid;
+    gap: 3rem;
+    align-content: start;
+
+    &__added {
+        display: grid;
+        gap: 2rem;
+
+        align-self: start;
+
+        &-placeholder {
+            display: grid;
+            gap: 2rem;
+        }
+    }
+
+    &__action {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    &__main-placeholder {
+        display: grid;
+        align-content: center;
+    }
+}

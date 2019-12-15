@@ -1,0 +1,59 @@
+.cities__added--sub {
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    gap: 2rem;
+    align-items: center;
+
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: $default-box-shadow;
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    .icon-main {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .details {
+        &__location {
+            color: var(--color-text-dark);
+
+            &--city {
+                font-size: 1.8rem;
+            }
+
+            &--country {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__datetime {
+            font-size: 1.2rem;
+            color: var(--color-text-maroon);
+            font-weight: 700;
+        }
+    }
+
+    .status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .temp {
+            font-size: 2.8rem;
+            color: --var(color-text-dark);
+        }
+
+        .state {
+            font-size: 1.5rem;
+            color: var(--color-text-blue);
+        }
+    }
+
+    &:hover {
+        transform: translateX(1rem);
+    }
+}

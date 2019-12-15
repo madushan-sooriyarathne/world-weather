@@ -1,0 +1,18 @@
+.error-message {
+    padding: 2rem;
+
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+
+    img {
+        width: 8rem;
+        height: 8rem;
+    }
+    p {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--color-error);
+    }
+}
