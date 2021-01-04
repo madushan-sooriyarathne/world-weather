@@ -1,6 +1,6 @@
 export default {
     api: {
-        key: "YOUR API KEY HERE",
+        key: "408c914e6fb013f8dd772124b11487b8",
         baseUrl: "https://api.openweathermap.org/data/2.5/weather",
         forecastUrl: "https://api.openweathermap.org/data/2.5/forecast?id=",
         coordUrl: "https://api.openweathermap.org/data/2.5/weather"

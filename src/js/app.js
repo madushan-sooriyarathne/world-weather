@@ -14,7 +14,6 @@ import * as addedCityView from "./views/addedCityView";
 import * as forecastView from "./views/forecastView";
 
 import { elements, renderLoader, showError, clearUI } from "./views/base";
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
 /*
     State
@@ -26,7 +25,7 @@ import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
 const state = {
     addedCities: ["1246294", "7287240", "2922849", "2766725"],
-    addedCitiesData: []
+    addedCitiesData: [],
 };
 
 // CONTROLLERS
@@ -106,7 +105,7 @@ const addedCityController = async () => {
 };
 
 // Forecast
-const forecastController = async id => {
+const forecastController = async (id) => {
     //Fetch the forecast data for main city
     try {
         // Clear Pagination
@@ -117,7 +116,7 @@ const forecastController = async id => {
 
         // Get the data of selected city from state.addedCityData
         const selectedCity = state.addedCitiesData.filter(
-            item => item.id == id
+            (item) => item.id == id
         )[0];
 
         // if user clicked on one of added Cities, selectedCity variable will not be empty
@@ -143,13 +142,18 @@ const forecastController = async id => {
 
 // MAIN EVENT LISTENERS
 
+// Page load event listener
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = 1;
+});
+
 // Forecast close event
-elements.forecastClose.addEventListener("click", event => {
+elements.forecastClose.addEventListener("click", (event) => {
     elements.forecastWindow.classList.remove("visible");
 });
 
 // Forecast View Pagination
-elements.forecastPagination.addEventListener("click", event => {
+elements.forecastPagination.addEventListener("click", (event) => {
     const button = event.target.closest(".btn__page");
 
     if (button) {
@@ -163,7 +167,7 @@ elements.forecastPagination.addEventListener("click", event => {
 });
 
 // Clear Cities
-elements.clearCitiesBtn.addEventListener("click", event => {
+elements.clearCitiesBtn.addEventListener("click", (event) => {
     // Clear local storage
     state.storage.clearLocalStorage();
 
@@ -182,20 +186,20 @@ elements.clearCitiesBtn.addEventListener("click", event => {
 });
 
 // Delete individual cities
-elements.forecastCurrent.addEventListener("click", event => {
+elements.forecastCurrent.addEventListener("click", (event) => {
     const btn = event.target.closest(".btn__remove");
     if (btn) {
         if (state.addedCities.includes(btn.dataset.remove)) {
             // delete the id of the city
             state.addedCities.splice(
-                state.addedCities.findIndex(el => el === btn.dataset.remove),
+                state.addedCities.findIndex((el) => el === btn.dataset.remove),
                 1
             );
 
             // delete the loaded weather data
             delete state.addedCitiesData.splice(
                 state.addedCitiesData.findIndex(
-                    el => el.id === parseInt(btn.dataset.remove)
+                    (el) => el.id === parseInt(btn.dataset.remove)
                 ),
                 1
             );
@@ -223,13 +227,13 @@ elements.forecastCurrent.addEventListener("click", event => {
 });
 
 // Search & Add cities to the list
-elements.searchForm.addEventListener("submit", async event => {
+elements.searchForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     await searchController();
 });
 
 // Search View Results
-elements.searchResPlaceholder.addEventListener("click", async event => {
+elements.searchResPlaceholder.addEventListener("click", async (event) => {
     const item = event.target.closest(".search-add");
 
     if (item) {
@@ -262,7 +266,7 @@ elements.searchResPlaceholder.addEventListener("click", async event => {
 });
 
 // Search View Pagination
-elements.searchPagination.addEventListener("click", event => {
+elements.searchPagination.addEventListener("click", (event) => {
     const btn = event.target.closest(".btn__page");
 
     if (btn) {
@@ -278,7 +282,7 @@ elements.searchPagination.addEventListener("click", event => {
 });
 
 // Added Cities Click event
-elements.subCityPlaceholder.addEventListener("click", async event => {
+elements.subCityPlaceholder.addEventListener("click", async (event) => {
     const city = event.target.closest(".forecast-btn");
     if (city) {
         // Make overlay visible
@@ -289,7 +293,7 @@ elements.subCityPlaceholder.addEventListener("click", async event => {
 });
 
 // Main City Click event
-elements.mainCityPlaceholder.addEventListener("click", event => {
+elements.mainCityPlaceholder.addEventListener("click", (event) => {
     const city = event.target.closest(".forecast-btn");
 
     if (city) {
@@ -300,7 +304,7 @@ elements.mainCityPlaceholder.addEventListener("click", event => {
 });
 
 // Add City Button click event
-elements.addCityBtn.addEventListener("click", event => {
+elements.addCityBtn.addEventListener("click", (event) => {
     // Clear the input field
     searchView.clearInput();
 
@@ -309,19 +313,19 @@ elements.addCityBtn.addEventListener("click", event => {
 });
 
 // Get the weather data from API When Page load
-window.addEventListener("load", async event => {
+window.addEventListener("load", async (event) => {
     // Get the Geo Coordinates
     navigator.geolocation.getCurrentPosition(
-        async pos => {
+        async (pos) => {
             // Save coordinates to state
             state.coords = {
                 lat: pos.coords.latitude,
-                long: pos.coords.longitude
+                long: pos.coords.longitude,
             };
 
             await mainCityController();
         },
-        err => {
+        (err) => {
             // Show Location not available screen
             showError(
                 elements.mainCityPlaceholder,
